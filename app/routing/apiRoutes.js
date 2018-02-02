@@ -18,12 +18,15 @@ module.exports = function(app) {
       var difference = 0
       // get the difference
       for (var y = 0; y < friends[i].scores.length; y++) {
-        difference += Math.abs(newFriend.scores[y] - friends[i].scores)
+        console.log(`${newFriend.scores[y]} - ${friends[i].scores[y]}`)
+        difference += Math.abs(newFriend.scores[y] - friends[i].scores[y])
       }
+      console.log(`Is ${difference} < ${bestFriendDifference}?`)
       if (difference < bestFriendDifference) {
         closestMatch = friends[i]
       }
     }
+    console.log(closestMatch)
     response.json(closestMatch)
   })
 }
