@@ -24,6 +24,7 @@ module.exports = function(app) {
       console.log(`Is ${difference} < ${bestFriendDifference}?`)
       if (difference < bestFriendDifference) {
         closestMatch = friends[i]
+        bestFriendDifference = difference
       }
     }
     console.log(closestMatch)
